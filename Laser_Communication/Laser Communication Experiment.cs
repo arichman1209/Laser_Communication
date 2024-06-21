@@ -68,11 +68,10 @@ namespace Laser_Communication
         {
             if (serialPortTx == null) { return; }
             else if (!serialPortTx.IsOpen) { MessageBox.Show("Device not found, Please choose your device. ", "Error"); return; }
-
+            if (txb_Transmitter.Text == "") { return; } // 如果 Tx_Message 欄位是空的就不傳訊號
             string Tx_Message = $"{DateTime.Now.ToString("HH:mm:ss")}:\t{txb_Transmitter.Text}\r\n"; //訊號呈現發是為時間+txb_Transmitter內的文字
             serialPortTx.Write(Tx_Message); //傳送Tx_Message的訊息
         }
-
 
         private void tmr_Com_Tick(object sender, EventArgs e)
         {
