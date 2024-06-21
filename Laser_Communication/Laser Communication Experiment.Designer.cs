@@ -223,6 +223,7 @@
             // 
             // tmr_Com
             // 
+            this.tmr_Com.Interval = 300;
             this.tmr_Com.Tick += new System.EventHandler(this.tmr_Com_Tick);
             // 
             // tmr_Connect
